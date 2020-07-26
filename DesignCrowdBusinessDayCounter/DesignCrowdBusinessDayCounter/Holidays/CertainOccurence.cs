@@ -6,7 +6,6 @@ using System.Text;
 
 namespace DesignCrowdBusinessDayCounter
 {
-
     public class CertainOccurence : Holiday
     {
         private readonly int _month;

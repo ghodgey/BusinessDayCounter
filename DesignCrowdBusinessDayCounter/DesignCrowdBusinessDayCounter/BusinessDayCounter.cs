@@ -60,12 +60,12 @@ namespace DesignCrowdBusinessDayCounter
 
             foreach (var day in publicHolidays)
             {
-                //Assuming public holidays on the weekend get pushed over to the Monday
-                if (day.Date > firstDate.Date && day.Date < secondDate)
+                if ((day.Date > firstDate.Date && day.Date < secondDate) && (day.DayOfWeek != DayOfWeek.Saturday && day.DayOfWeek != DayOfWeek.Sunday))
                 {
                     workDays--;
                 }
             }
+
             return workDays;
         }
 
@@ -81,9 +81,8 @@ namespace DesignCrowdBusinessDayCounter
             {
                 var publicHolidays = day.GetDates(firstDate, secondDate);
                 newPubHolidays.AddRange(publicHolidays);
-                
             }
-            //If multiple public holidays fall on the same weekend - distinct
+            //If multiple public holidays fall on the same day - Anzac day & Easter - distinct
             foreach (var pubDay in newPubHolidays.Distinct())
             {
                 if (pubDay.Date > firstDate && pubDay.Date < secondDate)

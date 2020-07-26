@@ -51,13 +51,13 @@ namespace BusinessDayCounter.UnitTests
 
 
         public static IEnumerable<object[]> WeekDayData =>
-        new List<object[]>
-        {
-            new object[] { new DateTime(2013, 10, 7), new DateTime(2013, 10, 9), 1 },
-            new object[] { new DateTime(2013, 10, 5), new DateTime(2013, 10, 14), 5 },
-            new object[] { new DateTime(2013, 10, 7), new DateTime(2014, 1, 1), 61 },
-            new object[] { new DateTime(2013, 10, 7), new DateTime(2013, 10, 5), 0 }
-        };
+            new List<object[]>
+            {
+                new object[] { new DateTime(2013, 10, 7), new DateTime(2013, 10, 9), 1 },
+                new object[] { new DateTime(2013, 10, 5), new DateTime(2013, 10, 14), 5 },
+                new object[] { new DateTime(2013, 10, 7), new DateTime(2014, 1, 1), 61 },
+                new object[] { new DateTime(2013, 10, 7), new DateTime(2013, 10, 5), 0 }
+            };
 
         public static IEnumerable<object[]> WeekDayDataWithPublicHolidays =>
             new List<object[]>
@@ -78,7 +78,9 @@ namespace BusinessDayCounter.UnitTests
         public static IEnumerable<object[]> WeekDayDataWithHolidays =>
            new List<object[]>
            {
-                new object[] { new DateTime(2020, 6, 1), new DateTime(2020, 6, 30), Holidays,  18 }
+                new object[] { new DateTime(2020, 6, 1), new DateTime(2020, 6, 30), Holidays,  18 },
+                new object[] { new DateTime(2020, 7, 1), new DateTime(2020, 7, 14), Holidays,  8 },
+
            };
 
         public static List<Holiday> Holidays =>

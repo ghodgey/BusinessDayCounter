@@ -13,7 +13,6 @@ namespace DesignCrowdBusinessDayCounter
         private readonly int _day;
         private readonly bool _pushHolidayToMonday;
 
-
         public SameDay(int month, int day, bool pushHolidayToMonday)
         {
             _month = month;
@@ -23,7 +22,6 @@ namespace DesignCrowdBusinessDayCounter
 
         public override IEnumerable<DateTime> GetDates(DateTime firstDate, DateTime secondDate)
         {
-            //Check if on Saturday | Sunday --> Move to Monday
             var listOfDates = new List<DateTime>();
            
             var year = firstDate.Year;
